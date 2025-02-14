@@ -1,0 +1,365 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #1c1c1c;
+    color: #fff;
+    line-height: 1.6;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    transition: all 0.3s ease-in-out;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header .logo {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+header .nav-links {
+    list-style: none;
+    display: flex;
+}
+
+header .nav-links li {
+    margin-left: 30px;
+}
+
+header .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    position: relative;
+    display: inline-block;
+    padding: 5px;
+    transition: color 0.3s ease-in-out;
+}
+
+header .nav-links li a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #f39c12;
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-in-out;
+}
+
+header .nav-links li a:hover {
+    color: #f39c12;
+}
+
+header .nav-links li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.hero {
+    background: url('gym.jpeg') no-repeat center center/cover;
+    height: 100vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    animation: fadeIn 2s ease-out;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    animation: slideInFromTop 1s ease-out;
+}
+
+.hero p {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    animation: slideInFromBottom 1s ease-out;
+}
+
+.hero .btn {
+    padding: 1rem 2rem;
+    background-color: #f39c12;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+    animation: bounceIn 1s ease-out;
+}
+
+.hero .btn:hover {
+    transform: scale(1.1);
+}
+
+section {
+    padding: 6rem 2rem;
+    text-align: center;
+    background-color: #1c1c1c;
+    position: relative;
+    z-index: 5;
+    animation: fadeInSection 2s ease-out;
+}
+
+#services {
+    background-color: #2f2f2f;
+}
+
+#services h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+    color: #f39c12;
+    animation: slideInFromTop 1s ease-out;
+}
+
+#services .services-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    gap: 2rem;
+}
+
+#services .service-box {
+    background-color: #333;
+    padding: 3rem;
+    border-radius: 10px;
+    width: 30%;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    opacity: 0;
+    animation: fadeInServiceBox 1s ease-out forwards;
+}
+
+#services .service-box:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+#services .service-box:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+#services .service-box:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+#services .service-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    background-color: #f39c12;
+}
+
+#services .service-box h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+#services .service-box:hover h3 {
+    color: #1c1c1c;
+}
+
+#services .service-box p {
+    color: #ccc;
+}
+
+#about {
+    background-color: #222;
+    color: white;
+    padding: 6rem 2rem;
+}
+
+#about h2 {
+    margin-bottom: 2rem;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #f39c12;
+    animation: slideInFromTop 1s ease-out;
+}
+
+#about p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #ccc;
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeInSection 1.5s ease-out;
+}
+
+#contact {
+    background-color: #f39c12;
+    color: white;
+    padding: 4rem 2rem;
+}
+
+#contact h2 {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-weight: bold;
+    animation: slideInFromLeft 1s ease-out;
+}
+
+#contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#contact form input,
+#contact form textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+}
+
+#contact form input:focus,
+#contact form textarea:focus {
+    border-color: #f39c12;
+    outline: none;
+}
+
+#contact form button {
+    padding: 1rem 2rem;
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+#contact form button:hover {
+    background-color: #e67e22;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #333;
+    color: white;
+    font-size: 1rem;
+    position: relative;
+}
+
+footer p {
+    margin-top: 10px;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInSection {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInServiceBox {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
